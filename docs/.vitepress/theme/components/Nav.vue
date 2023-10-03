@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import {NDropdown,NIcon, NButton, NLayoutHeader, NSpace, NMenu, MenuOption,NSwitch, darkTheme, NEl} from 'naive-ui';
 import { Language, Search} from '@vicons/ionicons5';
-import { useData, useRouter } from 'vitepress'
+import { useData, useRouter } from 'vitepress';
 import { inject, ref, watch } from 'vue';
 import i18n from '../i18n';
 import { globalThemeKey, type ThemeConfig } from '../../type';
-const { site,lang, theme, localeIndex} = useData<ThemeConfig>()
+const { site,lang, theme, localeIndex} = useData<ThemeConfig>();
 
-const router = useRouter()
+const router = useRouter();
 
 const menuOptions = <MenuOption[]>[
 {
@@ -76,52 +76,66 @@ function handleSearchClicked() {
 
 </script>
 <template>
-<n-layout-header>
-  <n-space justify="space-around" align="center">
-    <n-el 
-    tag="span" 
-    style="
+  <n-layout-header>
+    <n-space
+      justify="space-around"
+      align="center"
+    >
+      <n-el 
+        tag="span" 
+        style="
             color: var(--text-color-1);
             transition: 0.3s var(--cubic-bezier-ease-in-out);
             font-size: 20px;
             font-family: var(--font-family);
             cursor: pointer;
           "
-    @click="() => {router.go('/');}"
+        @click="() => {router.go('/');}"
       >
         {{ site.title }}
-    </n-el>
+      </n-el>
 
-    <n-menu :options="menuOptions" mode="horizontal" v-model:value="menuActive"/>
+      <n-menu
+        v-model:value="menuActive"
+        :options="menuOptions"
+        mode="horizontal"
+      />
 
-    <n-space align="center">
-      <n-switch :on-update:value='() => {changeGlobalTheme()}'>
-        <template #checked>
-          <span>
-            {{i18n.light[lang]}}
-          </span>
-        </template>
-        <template #unchecked>
-          <span>
-            {{i18n.dark[lang]}}
-          </span>
-        </template>
-      </n-switch>
-      <n-dropdown trigger="hover" :options="languageOptions" @select="handleSelectLanguage">
+      <n-space align="center">
+        <n-switch :on-update:value="() => {changeGlobalTheme()}">
+          <template #checked>
+            <span>
+              {{ i18n.light[lang] }}
+            </span>
+          </template>
+          <template #unchecked>
+            <span>
+              {{ i18n.dark[lang] }}
+            </span>
+          </template>
+        </n-switch>
+        <n-dropdown
+          trigger="hover"
+          :options="languageOptions"
+          @select="handleSelectLanguage"
+        >
           <n-button circle>
+            <template #icon>
+              <n-icon><language /></n-icon>
+            </template>
+          </n-button>
+        </n-dropdown>
+        <n-button
+          circle
+          @click="handleSearchClicked"
+        >
           <template #icon>
-            <n-icon><language /></n-icon>
+            <n-icon><Search /></n-icon>
           </template>
         </n-button>
-      </n-dropdown>
-      <n-button circle @click="handleSearchClicked">
-        <template #icon>
-          <n-icon><Search /></n-icon>
-        </template>
-      </n-button>
+      </n-space>
     </n-space>
-    </n-space>
-</n-layout-header>
+  </n-layout-header>
 </template>
 
 <style scoped lang="scss">

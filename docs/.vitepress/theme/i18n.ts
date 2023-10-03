@@ -1,5 +1,5 @@
-import { dateDeDE, dateZhCN, deDE, enUS, zhCN } from "naive-ui"
-import dateEnUs from "naive-ui/es/locales/date/enUS"
+import { dateDeDE, dateZhCN, deDE, enUS, zhCN } from "naive-ui";
+import dateEnUs from "naive-ui/es/locales/date/enUS";
 
 const i18n = {
   home: {
@@ -91,6 +91,6 @@ const i18n = {
       key: 'deDE',
     },
   ]
-}
+};
 
-export default i18n
+export default i18n;

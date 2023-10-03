@@ -2,7 +2,6 @@ import { GlobalTheme } from "naive-ui"
 import { PostMeta } from "./utils"
 import type { InjectionKey, Ref } from "vue"
 
-
 export type UserConfig = {
   defaultLang: string
   languages: string[]

@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { useData } from 'vitepress';
 </script>
 <template>
-<slot/>
+  <slot />
 </template>
 
 <style scoped lang="scss">

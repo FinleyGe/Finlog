@@ -3,7 +3,7 @@
 </script>
 <template>
   <div class="copyright">
-<slot/>
+    <slot />
   </div>
 </template>
 
