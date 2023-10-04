@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { NSpace, NInput, NIcon } from 'naive-ui';
+// import { NSpace, NInput, NIcon } from 'naive-ui';
+import * as naive from 'naive-ui';
+const { NSpace, NInput, NIcon } = naive;
 import i18n from '../i18n';
 import { useData } from 'vitepress';
 const { lang } = useData();

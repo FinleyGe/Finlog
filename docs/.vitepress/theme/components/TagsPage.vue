@@ -2,7 +2,9 @@
 import { useData } from 'vitepress';
 import { ThemeConfig } from '../../type';
 const { lang, theme } = useData<ThemeConfig>();
-import { NCard, NTag, NSpace, NH1, NButton } from 'naive-ui';
+// import { NCard, NTag, NSpace, NH1, NButton } from 'naive-ui';
+import * as naive from 'naive-ui';
+const { NCard, NTag, NSpace, NH1, NButton } = naive;
 import i18n from '../i18n';
 import { PostMeta } from '../../utils';
 import { computed, ref } from 'vue';

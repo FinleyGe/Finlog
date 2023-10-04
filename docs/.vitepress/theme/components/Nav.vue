@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import {NDropdown,NIcon, NButton, NLayoutHeader, NSpace, NMenu, MenuOption,NSwitch, darkTheme, NEl} from 'naive-ui';
+// import {NDropdown,NIcon, NButton, NLayoutHeader, NSpace, NMenu, MenuOption,NSwitch, darkTheme, NEl} from 'naive-ui';
+import * as naive from 'naive-ui';
+const {NDropdown,NIcon, NButton, NLayoutHeader, NSpace, NMenu,NSwitch, darkTheme, NEl} = naive;
+import { MenuOption } from 'naive-ui';
 import { Language, Search} from '@vicons/ionicons5';
 import { useData, useRouter } from 'vitepress';
 import { inject, ref, watch } from 'vue';

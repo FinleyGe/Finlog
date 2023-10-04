@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { useData, useRouter } from 'vitepress';
-import {NButton, NSpace, NH1, NCollapse, NCollapseItem} from 'naive-ui';
+// import {NButton, NSpace, NH1, NCollapse, NCollapseItem} from 'naive-ui';
+import * as naive from 'naive-ui';
+const {NButton, NSpace, NH1, NCollapse, NCollapseItem} = naive;
+
 import { ThemeConfig } from '../../type';
 import { PostMeta } from '../../utils';
 import i18n from '../i18n';

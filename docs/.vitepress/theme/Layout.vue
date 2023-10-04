@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { useData } from 'vitepress';
 const { frontmatter, lang, theme } = useData();
-import { NConfigProvider, NLayoutFooter, NMessageProvider, enUS, zhCN, dateEnUS, dateZhCN, darkTheme, GlobalTheme, NLayout, NLayoutContent } from 'naive-ui';
+// import { NConfigProvider, NLayoutFooter, NMessageProvider, enUS, zhCN, dateEnUS, dateZhCN, darkTheme, GlobalTheme, NLayout, NLayoutContent } from 'naive-ui';
+import * as naive from 'naive-ui';
+const { NConfigProvider, NLayoutFooter, NMessageProvider, enUS, zhCN, dateEnUS, dateZhCN, darkTheme, NLayout, NLayoutContent } = naive;
+import { GlobalTheme } from 'naive-ui';
+
 import Nav from './components/Nav.vue';
 import HomePage from './components/HomePage.vue';
 import PostPage from './components/PostPage.vue';
@@ -40,8 +44,6 @@ provide(
     <n-message-provider>
       <n-layout>
         <Nav />
-        <!-- {{theme}} -->
-        <!-- {{useData()}} -->
         <n-layout-content content-style="padding: 24px">
           <template v-if="frontmatter.home">
             <home-page />

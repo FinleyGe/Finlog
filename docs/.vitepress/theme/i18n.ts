@@ -1,5 +1,6 @@
-import { dateDeDE, dateZhCN, deDE, enUS, zhCN } from "naive-ui";
-import dateEnUs from "naive-ui/es/locales/date/enUS";
+// import { dateDeDE, dateZhCN, deDE, enUS, zhCN } from "naive-ui";
+import * as naive from "naive-ui";
+const { dateEnUS, dateDeDE, dateZhCN, deDE, enUS, zhCN } = naive;
 
 const i18n = {
   home: {
@@ -74,7 +75,7 @@ const i18n = {
   },
   langDate: {
     zhCN: dateZhCN,
-    enUS: dateEnUs,
+    enUS: dateEnUS,
     deDE: dateDeDE,
   },
   languageOptions: [

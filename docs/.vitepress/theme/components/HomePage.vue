@@ -2,7 +2,9 @@
 import { useData, useRouter} from 'vitepress';
 const router = useRouter();
 const { lang, theme, localeIndex } = useData<ThemeConfig>();
-import { NButton,NIcon, NCard, NSpace, NTag} from 'naive-ui';
+// import { NButton, NIcon, NCard, NSpace, NTag} from 'naive-ui';
+import * as naive from 'naive-ui';
+const { NButton, NIcon, NCard, NSpace, NTag} = naive;
 import { ThemeConfig } from '../../type';
 import i18n from '../i18n';
 import { IosArrowDropright } from '@vicons/ionicons4';

@@ -1,6 +1,8 @@
 import { defineConfigWithTheme } from "vitepress"
 import type { ThemeConfig, UserConfig } from "./type"
 import { getAllPosts } from "./utils"
+import { buildEnd } from './hooks'
+import { cjsInterop } from "vite-plugin-cjs-interop";
 
 let userConfig: UserConfig = {
   languages: ['zhCN', 'enUS', 'deDE'],
@@ -8,6 +10,7 @@ let userConfig: UserConfig = {
   author: 'Finley',
   icp: 'xxxxxxxxx',
   copyright: '2023 Finley All Rights Reserved.',
+  url: 'https://example.com',
 }
 
 let postsdata = getAllPosts(userConfig.languages.filter(
@@ -15,16 +18,10 @@ let postsdata = getAllPosts(userConfig.languages.filter(
 ), userConfig.defaultLang)
 
 export default defineConfigWithTheme<ThemeConfig>({
+  // buildEnd: buildEnd,
   title: "Finlog",
   description: "A Vitepress + Obsidian Blog",
   themeConfig: {
-    // posts: getAllPosts(userConfig.languages.filter(
-    //   (lang) => lang !== userConfig.defaultLang
-    // ), userConfig.defaultLang),
-    // ...userConfig,
-    // tags: [],
-    // categories: [],
-
     posts: postsdata.postmeta,
     tags: postsdata.tags,
     categories: postsdata.categories,
@@ -43,5 +40,16 @@ export default defineConfigWithTheme<ThemeConfig>({
       label: 'Deutsch',
       lang: 'deDE',
     },
-  }
+  },
+  vite: {
+    plugins: [
+      cjsInterop(
+        {
+          dependences: [
+            'naive-ui',
+          ]
+        }
+      ),
+    ]
+  },
 })

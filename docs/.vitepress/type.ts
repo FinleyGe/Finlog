@@ -6,6 +6,7 @@ export type UserConfig = {
   defaultLang: string
   languages: string[]
   author: string
+  url: string
   icp?: string | null
   copyright?: string | null
 }
