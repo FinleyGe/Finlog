@@ -10,7 +10,7 @@ let userConfig: UserConfig = {
   author: 'Finley',
   icp: 'xxxxxxxxx',
   copyright: '2023 Finley All Rights Reserved.',
-  url: 'https://example.com',
+  url: 'http://localhost:4173',
 }
 
 let postsdata = getAllPosts(userConfig.languages.filter(
@@ -18,7 +18,7 @@ let postsdata = getAllPosts(userConfig.languages.filter(
 ), userConfig.defaultLang)
 
 export default defineConfigWithTheme<ThemeConfig>({
-  // buildEnd: buildEnd,
+  buildEnd: buildEnd,
   title: "Finlog",
   description: "A Vitepress + Obsidian Blog",
   themeConfig: {
