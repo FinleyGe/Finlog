@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "bun run ./docs/.vitepress/theme/util.ts",
+    "docs:new": "bun run ./scripts/create-new-post.ts",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
@@ -25,6 +26,8 @@
     "eslint-plugin-vue": "^9.17.0",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
+    "markdown-it-anchor": "^8.6.7",
+    "markdown-it-mathjax3": "^4.3.2",
     "naive-ui": "^2.35.0",
     "sass": "^1.68.0",
     "vfonts": "^0.0.3",

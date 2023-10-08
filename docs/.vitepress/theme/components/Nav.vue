@@ -14,9 +14,6 @@ const router = useRouter();
 
 const menuOptions = <MenuOption[]>[
 {
-  key:'about',
-  label: i18n.about[lang.value]
-},{
   key:'archive',
   label: i18n.archive[lang.value]
 },{
@@ -29,7 +26,11 @@ const menuOptions = <MenuOption[]>[
   key:'links',
   label:
     i18n.links[lang.value]
-}];
+},{
+  key:'about',
+  label: i18n.about[lang.value]
+},
+];
 
 const menuActive = ref<string>('');
 

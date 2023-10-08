@@ -3,6 +3,7 @@ import type { ThemeConfig, UserConfig } from "./type"
 import { getAllPosts } from "./utils"
 import { buildEnd } from './hooks'
 import { cjsInterop } from "vite-plugin-cjs-interop";
+import markdownItAnchor from 'markdown-it-anchor'
 
 let userConfig: UserConfig = {
   languages: ['zhCN', 'enUS', 'deDE'],
@@ -52,4 +53,13 @@ export default defineConfigWithTheme<ThemeConfig>({
       ),
     ]
   },
+  markdown: {
+    math: true,
+    anchor: {
+      permalink: markdownItAnchor.permalink.headerLink()
+    },
+    // lineNumbers: true,
+    theme: 'monokai',
+    toc: { level: [1, 2] },
+  }
 })

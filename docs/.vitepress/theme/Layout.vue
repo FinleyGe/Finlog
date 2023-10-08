@@ -44,7 +44,7 @@ provide(
     <n-message-provider>
       <n-layout>
         <Nav />
-        <n-layout-content content-style="padding: 24px">
+        <n-layout-content content-style="padding: 24px; min-height: calc(100vh - 62px)">
           <template v-if="frontmatter.home">
             <home-page />
           </template>

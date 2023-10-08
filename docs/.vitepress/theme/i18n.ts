@@ -68,6 +68,11 @@ const i18n = {
     enUS: 'English (US)',
     deDE: 'Deutsch (DE)',
   },
+  publishTime: {
+    zhCN: '发布于',
+    enUS: 'Published at',
+    deDE: 'Veröffentlicht am',
+  },
   lang: {
     zhCN: zhCN,
     enUS: enUS,
